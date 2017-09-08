@@ -1,0 +1,23 @@
+{
+  "name": "github-user-lookup",
+  "description": "A website where users may enter a GitHub username into a form, submit it, and see the names and descriptions of that person's public repositories.",
+  "main": "index.js",
+  "authors": [
+    "marynganga <marynganga.mw@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.18.1"
+  }
+}
