@@ -65,16 +65,28 @@ $('.userName').append('<p>Username: '+name + '</p>'
     $('.userName').append(error.responseJSON.message);
   });
 };
+
+
+// A function to clear input fields and previous output fields
+exports.clearFields = function(){
+	$('#name').val('');
+	$('.userName').empty();
+	$('.publicRepos').empty();
+};
 },{"./../.env":1}],3:[function(require,module,exports){
 var getRepos = require('./../js/lookup.js').getRepos;
-
+var clearFields = require('./../js/lookup.js').clearFields;
 
 $(document).ready(function(){
 
-$('#submitName').click(function(event){
+$('#submitName').click(function(event){  // actions to be taken when username is submitted
 	event.preventDefault();
+	// Insert inputted username into a variable
 	var name = $('#name').val();
 	console.log(name);
+	// Clear previous input fields
+	clearFields();
+	// Parse the inputted username into the getRepos function for processing
 	getRepos(name);
 });
 

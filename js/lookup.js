@@ -62,3 +62,11 @@ $('.userName').append('<p>Username: '+name + '</p>'
     $('.userName').append(error.responseJSON.message);
   });
 };
+
+
+// A function to clear input fields and previous output fields
+exports.clearFields = function(){
+	$('#name').val('');
+	$('.userName').empty();
+	$('.publicRepos').empty();
+};
