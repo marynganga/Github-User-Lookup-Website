@@ -15,6 +15,8 @@ exports.getRepos = function(name){
 
 $('.userName').append('<p>The username entered is: '+name + '</p>'
 					 +'<p>The user\'s name is: '+response.name + '</p>'
+					 +'<p>Following: '+response.following + '</p>'
+					 +'<p>Followers: '+response.followers + '</p>'
 					 +'<img src='+response.avatar_url+' alt="Image of user" />');
 
 	$.get(response.repos_url).then(function(repos){
