@@ -12,7 +12,7 @@ else {
 	return response.email;
 };
 // Display the users information by appending it inside the div userName
-$('.userName').append('<h4>User\'s Information</h4>'+'<p>Username: '+name + '</p>'
+$('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p>'
 					 +'<p>Full Name: '+response.name + '</p>'
 					 +'<p>Github Url: '+'<a target="_blank" href="'+response.html_url + '">'+response.html_url+'</a></p>'
 					 +'<p>Email: '+response.email + '</p>'
@@ -21,6 +21,7 @@ $('.userName').append('<h4>User\'s Information</h4>'+'<p>Username: '+name + '</p
 					 +'<img src='+response.avatar_url+' alt="Image of user" />');
 // Retrieve info on the users public repositories
 	$.get(response.repos_url).then(function(repos){
+		$('.publicRepos').append('<h2>Public Repositories</h2>');
 		//loop through and display all the users repos
 		// Set condition for loop as the number of public repos (retrieved using response.public_repos )
 		for (var i = 0; i <= response.public_repos-1; i++) {
@@ -48,7 +49,7 @@ $('.userName').append('<h4>User\'s Information</h4>'+'<p>Username: '+name + '</p
 
 
 // Display the users rep details by appending it inside the div publicRepos
-		$('.publicRepos').append('<p>'+index+'. Name: '+repos[i].name + '</p>'
+		$('.publicRepos').append('<p>'+index+'. '+repos[i].name + '</p>'
 		+'<p> Created on: '+creation + '</p>'
 		+'<p>Description: '+repos[i].description + '</p>'
 		+'<p>Repository Url: '+'<a target="_blank" href="'+repos[i].html_url + '">'+repos[i].html_url+'</a></p>'
@@ -59,7 +60,7 @@ $('.userName').append('<h4>User\'s Information</h4>'+'<p>Username: '+name + '</p
 
 	})
 }).fail(function(error){
-    $('.userName').append(error.responseJSON.message);
+    $('.userInfo').append(error.responseJSON.message);
   });
 };
 

@@ -7,7 +7,9 @@ $('#submitName').click(function(event){  // actions to be taken when username is
 	event.preventDefault();
 	// Insert inputted username into a variable
 	var name = $('#name').val();
-	console.log(name);
+
+	$('#input').hide();
+	$('#output').show();
 	// Clear previous input fields
 	clearFields();
 	// Parse the inputted username into the getRepos function for processing
