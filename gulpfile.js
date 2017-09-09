@@ -37,10 +37,18 @@ gulp.task('jsBrowserify', ['concatInterface'], function() {
     .pipe(gulp.dest('./build/js'));
 });
 
+
 gulp.task("minifyScripts", ["jsBrowserify"], function(){
   return gulp.src("./build/js/app.js")
     .pipe(uglify())
     .pipe(gulp.dest("./build/js"));
+});
+
+gulp.task("includeAssets", function(){
+  var jpgImages = gulp.src("./assets/images/*.jpg")
+  var pngImages = gulp.src("./assets/images/*.png")
+  return merge(jpgImages,pngImages)
+    .pipe(gulp.dest("./build/assets/images"));
 });
 
 gulp.task("clean", function(){
@@ -54,7 +62,6 @@ gulp.task("build",['clean'], function(){
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
-  // gulp.start('cssBuild');
 });
 
 gulp.task('jshint', function(){
@@ -70,7 +77,7 @@ gulp.task('bowerJS', function () {
     .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('bowerCSS', function () {
+gulp.task('bowerCSS',["includeAssets"], function () {
   var bootstrapFiles = gulp.src(lib.ext('css').files);
   // var stylesCss = gulp.src('css/styles.css');
   var stylesScss = gulp.src(['scss/*.scss'])
@@ -87,31 +94,6 @@ gulp.task('bowerCSS', function () {
 
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
-// gulp.task('serve', function() {
-//   browserSync.init({
-//     server: {
-//       baseDir: "./",
-//       index: "index.html"
-//     }
-//   });
-//    gulp.watch(['js/*.js'], ['jsBuild']);
-//    gulp.watch(['bower.json'], ['bowerBuild']);
-//    gulp.watch(['*.html'], ['htmlBuild']);
-//    gulp.watch(["scss/*.scss"], ['bowerCSS']);
-
-// });
-
-// gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
-//   browserSync.reload();
-// });
-
-// gulp.task('bowerBuild', ['bower'], function(){
-//   browserSync.reload();
-// });
-
-// gulp.task('htmlBuild', function(){
-//   browserSync.reload();
-// });
 
 gulp.task('serve', function() {
   browserSync.init({
@@ -123,7 +105,7 @@ gulp.task('serve', function() {
    gulp.watch(['js/*.js'], ['jsBuild']);
    gulp.watch(['bower.json'], ['bowerBuild']);
    gulp.watch(['*.html'], ['htmlBuild']);
-   gulp.watch(["scss/*.scss"], ['bowerCSS']);
+   gulp.watch(["scss/*.scss"], ['bowerBuild']);
 
 });
 

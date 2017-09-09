@@ -3,34 +3,62 @@
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+     <script src="https://use.fontawesome.com/43a032c80c.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Acme|Berkshire+Swash|Catamaran" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <title>Github User Lookup</title>
   </head>
   <body>
     <div class="container">
-      <header class="jumbotron">
-          <h1>Github User Lookup</h1>
+      <header>
+          <h1><img src="assets/images/img6.png" alt="Website logo">Github User Lookup</h1>
       </header>
       <main class="row">
-        <section class="col-md-6" id="userNameSection">
-          <label for="name">Enter Username:</label>
-          <input id="name" type="text" placeholder="Username" required autofocus autocomplete="on">
-          <button class="btn-info" id="submitName">Enter</button>
 
-           <div class="userName">
-          </div>
-
-        </section>
-        <section class="col-md-6" id="resultsSection">
+        <section class="col-md-8" id="resultsSection">
          <!-- <h4>Public Repos</h4> -->
           <div class="githubLogo">
             <img src="assets/images/img1.png" alt="Background Image">
+            <div class="about"> 
+            <p>Want to find out information about a Github user? All you have to do is enter their username and click search.</p>
+            <p>Github User Lookup will do the rest; traversing through Github's database to display the User's Account Info, including:</p>
+            <ul>
+              <li>Username</li>
+              <li>Full Name</li>
+              <li>Follower and Following count</li>
+              <li>Github Url</li>
+              <li>Email</li>
+              <li>Avatar</li>
+            </ul>
+            <p>It will also display the User's Public Repositories, detailing the following info for each repository:</p>
+            <ul>
+              <li>Name</li>
+              <li>Date Created</li>
+              <li>Description</li>
+              <li>Repository Url</li>
+              <li>Deployed Site</li>
+            </ul>
+            </div>
           </div>
           <div class="publicRepos">
           </div>
 
         </section>
+        <section class="col-md-4" id="userNameSection">
+          
+          <form role="form">
+            <div class="form-group has-feedback">
+              <label for="name" class="control-label">Enter Username:</label>
+              <input id="name" type="text" required placeholder="Username"  autofocus autocomplete="on" class="form-control">
+              <i class="form-control-feedback fa fa-search" aria-hidden="true"></i>
+              <button class="btn-info" id="submitName" type="submit">Enter</button>
+            </div>
+          </form>
+
+          <div class="userName">
+          </div>
+</section>
+       
       </main> 
     </div>  
   </body>

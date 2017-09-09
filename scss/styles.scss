@@ -1,0 +1,78 @@
+/*General HTML Tags Styles*/
+
+body .container{
+    background-color: white;
+    margin: 0px auto;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    min-height: 100%;
+    padding:0px;
+    color:black;
+  
+}
+/*Styling for the heading*/
+header{
+	margin: 0px;
+	padding:0px;
+	width: 100%;
+	border-bottom: 2px solid #ddd;
+	box-shadow: 0 2px 2px #fff;
+	background-color: white;
+	color: black;
+	min-height: 15%;
+
+
+	h1{
+	font-family: 'Berkshire Swash', cursive;
+	margin: auto;
+	font-size: 4em;
+	img{
+	width:100px;
+	}
+	}
+}
+/*Styling for the main tag*/
+.row{
+	margin:0 auto;
+	width:100%;
+	min-height: 85%;
+	padding: 0px;
+}
+#userNameSection{
+	margin: auto;
+	min-height: 100%;
+	padding-top: 10%;
+
+}
+#resultsSection{
+background-image: url("../assets/images/background.png");
+min-height: 100%;
+background-size: cover;
+background-attachment: fixed;
+}
+
+.githubLogo img{
+margin-top:10%;
+}
+.about{
+	margin: 10px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.55);
+    color: black;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #f5f5f5;
+    font-size: 17px;
+}
+
+.has-feedback label ~ .form-control-feedback {
+    top: 31px;
+}
+button{
+	    margin: 20px;
+    width: 30%;
+    border-radius: 5px;
+}
