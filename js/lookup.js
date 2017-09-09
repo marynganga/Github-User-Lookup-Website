@@ -14,19 +14,19 @@ $('.userName').append('<p>The username entered is: '+name + '</p>'
 					 +'<p>The user\'s name is: '+response.name + '</p>');
 
 	$.get(response.repos_url).then(function(repos){
-		repos.forEach(function(repo){
-		console.log(repos[0].name);
-		console.log(repos[1].description);
-		$('.publicRepos').append('<p>The repository\'s name: '+repos[0].name + '</p>'
-					 +'<p>The repository\'s description: '+repos[1].description + '</p>');
+		for (var i = 0; i <= response.public_repos-1; i++) {
+		console.log(repos[i].name);
+		console.log(repos[i].description);
+		$('.publicRepos').append('<p>The repository\'s name: '+repos[i].name + '</p>'
+					 +'<p>The repository\'s description: '+repos[i].description + '</p>');
+
+	}
 
 	}).fail(function(error){
     console.log(error.reposJSON.message);
 
 	})
-
-});
-  }).fail(function(error){
+}).fail(function(error){
     console.log(error.responseJSON.message);
   });
 };
