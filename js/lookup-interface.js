@@ -8,12 +8,7 @@ $('#setAlarmButton').click(function(event){
 	var name = $('#name').val();
 	console.log(name);
 	$('.userName').append('<p>The username entered is:'+name + '</p>');
-
-
-
-
-
-	getRepos();
+	getRepos(name);
 });
 
 

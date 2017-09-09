@@ -3,8 +3,8 @@ exports.apiKey = "f010f67f05b83d59f2f17f614edcd547d7291eb6";
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 
-exports.getRepos = function(){
-  $.get('https://api.github.com/users/daneden?access_token=' + apiKey).then(function(response){
+exports.getRepos = function(name){
+  $.get('https://api.github.com/users/'+name+'?access_token=' + apiKey).then(function(response){
     console.log(response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
@@ -26,7 +26,7 @@ $('#setAlarmButton').click(function(event){
 
 
 
-	getRepos();
+	getRepos(name);
 });
 
 
