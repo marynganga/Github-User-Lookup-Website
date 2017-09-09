@@ -29,17 +29,31 @@ $('.userName').append('<p>Username: '+name + '</p>'
 		// Use moment.js to format the date of repo creation
 		var creation = moment(repos[i].created_at).format('Do MMM YYYY h:mm a');
 
-// Change the displayed value of the repos description if current value is null
+// Change the displayed value of the repos info if current value is null
 		if (repos[i].description === null){
 			repos[i].description = "This repository has no description.";
 			}
 			else {
-				repos[i].description;
-			};
+				repos[i].description
+				
+			}
+		if (repos[i].homepage === null){
+			repos[i].homepage = "Deployed site unavailable"
+			var deployedSite = repos[i].homepage
+		}
+		else{
+			repos[i].homepage;
+			var deployedSite = '<a target="_blank" href="'+repos[i].homepage + '">'+repos[i].homepage+'</a>'
+		}
+
+
 // Display the users rep details by appending it inside the div publicRepos
 		$('.publicRepos').append('<p>'+index+'. Name: '+repos[i].name + '</p>'
-								+'<p> Created on: '+creation + '</p>'
-					 			+'<p>Description: '+repos[i].description + '</p>')
+		+'<p> Created on: '+creation + '</p>'
+		+'<p>Description: '+repos[i].description + '</p>'
+		+'<p>Repository Url: '+'<a target="_blank" href="'+repos[i].html_url + '">'+repos[i].html_url+'</a></p>'
+		+'<p>Deployed Site: '+deployedSite+'</p>'
+		)
 					
 	}
 
