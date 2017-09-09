@@ -9,24 +9,29 @@
   </head>
   <body>
     <div class="container">
-      <div class="titleSection">
-        <div class="jumbotron" id="title">
-            <h1>Github User Lookup</h1>
-        </div>
-      </div>
-      
-      <div class="userNameSection">
-        <label for="name">Enter Username:</label>
-        <input id="name" type="text" placeholder="Username" required>
-        <button class="btn-success" id="submitName">Enter</button>
-      </div>
-      <div class="userName">
-        <h4>User's Information</h4>
-      </div>
-      <div class="publicRepos">
-        <h4>Public Repos</h4>
-      </div>
-      
+      <header class="jumbotron">
+          <h1>Github User Lookup</h1>
+      </header>
+      <main class="row">
+        <section class="col-md-6" id="userNameSection">
+          <label for="name">Enter Username:</label>
+          <input id="name" type="text" placeholder="Username" required autofocus autocomplete="on">
+          <button class="btn-info" id="submitName">Enter</button>
+
+           <div class="userName">
+          </div>
+
+        </section>
+        <section class="col-md-6" id="resultsSection">
+         <!-- <h4>Public Repos</h4> -->
+          <div class="githubLogo">
+            <img src="assets/images/img1.png" alt="Background Image">
+          </div>
+          <div class="publicRepos">
+          </div>
+
+        </section>
+      </main> 
     </div>  
   </body>
 </html>

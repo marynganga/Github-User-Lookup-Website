@@ -12,7 +12,7 @@ else {
 	return response.email;
 };
 // Display the users information by appending it inside the div userName
-$('.userName').append('<p>Username: '+name + '</p>'
+$('.userName').append('<h4>User\'s Information</h4>'+'<p>Username: '+name + '</p>'
 					 +'<p>Full Name: '+response.name + '</p>'
 					 +'<p>Github Url: '+'<a target="_blank" href="'+response.html_url + '">'+response.html_url+'</a></p>'
 					 +'<p>Email: '+response.email + '</p>'
