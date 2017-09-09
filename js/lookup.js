@@ -7,11 +7,12 @@ exports.getRepos = function(name){
     console.log(response.following);
     // console.log(response.public_repos);
     console.log(response.url);
-    // console.log(response.repos_url);
+    console.log(response.avatar_url);
 
 
 $('.userName').append('<p>The username entered is: '+name + '</p>'
-					 +'<p>The user\'s name is: '+response.name + '</p>');
+					 +'<p>The user\'s name is: '+response.name + '</p>'
+					 +'<img src='+response.avatar_url+' alt="Image of user" />');
 
 	$.get(response.repos_url).then(function(repos){
 
@@ -19,11 +20,8 @@ $('.userName').append('<p>The username entered is: '+name + '</p>'
 		// console.log(repos[i].name);
 		// console.log(repos[i].description);
 		var index= i+1;
-	// for (numbers; numbers <= response.public_repos; numbers++) {
-
 		$('.publicRepos').append('<p>'+index+'. The repository\'s name: '+repos[i].name + '</p>'
 					 +'<p>The repository\'s description: '+repos[i].description + '</p>');
-// }
 	}
 
 	})
