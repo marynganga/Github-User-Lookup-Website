@@ -41,7 +41,7 @@ It uses Github's personal access tokens to search through it's databases and ret
 
 ## Technologies Used
 * HTML
-* CSS
+* SCSS
 * BOOTSTRAP
 * JAVASCRIPT
 * JQUERY
