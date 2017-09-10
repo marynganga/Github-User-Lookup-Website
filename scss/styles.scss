@@ -35,19 +35,7 @@ header{
 	}
 }
 /*Styling for the main tag*/
-/* Styling for the ouput section*/
-input{
-	display: block;
-}
-#output{
-	display: none;
-}
-.inputHidden{
-	display: none;
-}
-.outputShown{
-	display: block;
-}
+
 /*Styling for the rows*/
 .row{
 	margin:0 auto;
@@ -56,7 +44,7 @@ input{
 	padding: 0px;
 }
 /* Styling for the resultsSection: About Site and Public Repos Output*/
-#resultsSection{
+#aboutSection, #repoSection{
 background-image: url("../assets/images/background.png");
 min-height: 100%;
 background-size: cover;
@@ -80,14 +68,18 @@ background-attachment: fixed;
     box-shadow: 0px 0px 20px #f5f5f5;
     font-size: 17px;
 }
+.output{
+	display: none;
+}
 /* Styling for the userName Section : Form and User Account Details Output*/
-#userNameSection{
+.input{
+	display: block;
 	margin: auto;
 	min-height: 100%;
 	padding-top: 10%;
-
 }
-#usernameForm{
+.userNameForm{
+	display: block;
 	margin: auto;
 	min-height: 100%;
 	padding-top: 5%;
@@ -101,3 +93,8 @@ button{
     border-radius: 5px;
 }
 
+/* Styling for the User Info Output*/
+.userInfo img{
+	width: 300px;
+	height: 300px;
+}

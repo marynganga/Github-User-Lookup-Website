@@ -71,7 +71,7 @@ $('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p
 // A function to clear input fields and previous output fields
 exports.clearFields = function(){
 	$('#name').val('');
-	$('.userName').empty();
+	$('.userInfo').empty();
 	$('.publicRepos').empty();
 };
 },{"./../.env":1}],3:[function(require,module,exports){
@@ -85,15 +85,19 @@ $('#submitName').click(function(event){  // actions to be taken when username is
 	// Insert inputted username into a variable
 	var name = $('#name').val();
 
-	$('#input').hide();
-	$('#output').show();
+	$('#aboutSection').hide();
 	// Clear previous input fields
 	clearFields();
+	$('.output').show();
+	$('#userNameSection').removeClass('input');
+	$('#userNameSection').addClass('userNameForm');
+
+
 	// Parse the inputted username into the getRepos function for processing
 	getRepos(name);
+
+
 });
-
-
 
 });
 },{"./../js/lookup.js":2}]},{},[3]);

@@ -68,6 +68,6 @@ $('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p
 // A function to clear input fields and previous output fields
 exports.clearFields = function(){
 	$('#name').val('');
-	$('.userName').empty();
+	$('.userInfo').empty();
 	$('.publicRepos').empty();
 };

@@ -13,12 +13,12 @@
           <h1><img src="assets/images/img6.png" alt="Website logo">Github User Lookup</h1>
       </header>
       <!-- This section contains Site Info and Input Form -->
-      <main class="row" id="input">
-        <section class="col-md-8" id="resultsSection">
+      <main class="row">
+        <section class="col-md-8" id="aboutSection">
         <!-- This section contains info about the website -->
           <div class="siteInfo">
             <img src="assets/images/img1.png" alt="Background Image">
-            <div class="about"> 
+            <div class="about">
               <h2>About</h2>
               <p>Want to find out information about a Github user? All you have to do is enter their username and click search.</p>
               <p>Github User Lookup will do the rest; traversing through Github's database to display the User's Account Info, including:</p>
@@ -41,37 +41,24 @@
             </div>
           </div>
         </section>
+         <!-- Display of User's Public Repos -->
+        <section class="col-md-8 output" id="repoSection">
+          <div class="publicRepos">
+            <h2>Public Repositories</h2>
+          </div>
+        </section>
         <!-- This section contains a form for inputting a username for searching -->
-        <section class="col-md-4" id="userNameSection">
+        <section class="col-md-4 input" id="userNameSection">
           <form role="form">
             <div class="form-group has-feedback">
               <label for="name" class="control-label">Enter Username:</label>
               <input id="name" type="text" required placeholder="Username"  autofocus autocomplete="on" class="form-control">
               <i class="form-control-feedback fa fa-search" aria-hidden="true"></i>
-              <button class="btn-info" id="submitName" type="submit">Enter</button>
+              <button class="btn-info" id="submitName" type="click">Enter</button>
             </div>
           </form>
-        </section>
-      </main> 
       <!-- Section showing the results of the entered username search -->
-      <main class="row" id="output">
-       <!-- Display of User's Public Repos -->
-        <section class="col-md-8" id="resultsSection">
-          <div class="publicRepos publicReposHidden">
-            <h2>Public Repositories</h2>
-          </div>
-        </section>
-      <!-- Display of User's info -->
-        <section class="col-md-4" id="usernameForm">
-         <form role="form">
-            <div class="form-group has-feedback">
-              <label for="name" class="control-label">Enter Username:</label>
-              <input id="name" type="text" required placeholder="Username"  autofocus autocomplete="on" class="form-control">
-              <i class="form-control-feedback fa fa-search" aria-hidden="true"></i>
-              <button class="btn-info" id="submitName" type="submit">Enter</button>
-            </div>
-          </form>
-          <div class="userInfo">
+           <div class="userInfo">
           </div>
         </section>
       </main> 

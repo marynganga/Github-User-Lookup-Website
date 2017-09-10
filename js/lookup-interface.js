@@ -8,14 +8,18 @@ $('#submitName').click(function(event){  // actions to be taken when username is
 	// Insert inputted username into a variable
 	var name = $('#name').val();
 
-	$('#input').hide();
-	$('#output').show();
+	$('#aboutSection').hide();
 	// Clear previous input fields
 	clearFields();
+	$('.output').show();
+	$('#userNameSection').removeClass('input');
+	$('#userNameSection').addClass('userNameForm');
+
+
 	// Parse the inputted username into the getRepos function for processing
 	getRepos(name);
+
+
 });
-
-
 
 });
