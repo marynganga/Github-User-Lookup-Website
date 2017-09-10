@@ -1,5 +1,5 @@
 /*General HTML Tags Styles*/
- h2, label, button{
+ h2,h4,h5, label, button{
     font-family: 'Berkshire Swash', cursive;
     }
 /* Styles for the body*/
@@ -82,7 +82,7 @@ background-attachment: fixed;
 	display: block;
 	margin: auto;
 	min-height: 100%;
-	padding-top: 5%;
+	padding-top: 2%;
 }
 .has-feedback label ~ .form-control-feedback {
     top: 31px;
@@ -97,4 +97,14 @@ button{
 .userInfo img{
 	width: 300px;
 	height: 300px;
+}
+
+/*Styling for the Repo Output*/
+.links{
+	color:purple;
+}
+
+.publicRepos{
+	max-height: 800px;
+	overflow-y: scroll;
 }

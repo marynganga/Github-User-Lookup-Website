@@ -3,7 +3,6 @@ var apiKey = require('./../.env').apiKey;
 // Create and export a fuction getRepos which gets user's info and displays it on the webpage
 exports.getRepos = function(name){
   $.get('https://api.github.com/users/'+name+'?access_token=' + apiKey).then(function(response){
-    console.log(response);
 // Change the displayed value of the users email if current value is null
 if (response.email === null){
 	response.email = "email unavailable";
@@ -14,7 +13,7 @@ else {
 // Display the users information by appending it inside the div userName
 $('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p>'
 					 +'<p>Full Name: '+response.name + '</p>'
-					 +'<p>Github Url: '+'<a target="_blank" href="'+response.html_url + '">'+response.html_url+'</a></p>'
+					 +'<p>Github Url: '+'<a target="_blank" class="links" href="'+response.html_url + '">'+response.html_url+'</a></p>'
 					 +'<p>Email: '+response.email + '</p>'
 					 +'<p>Following: '+response.following + '</p>'
 					 +'<p>Followers: '+response.followers + '</p>'
@@ -44,15 +43,15 @@ $('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p
 		}
 		else{
 			repos[i].homepage;
-			var deployedSite = '<a target="_blank" href="'+repos[i].homepage + '">'+repos[i].homepage+'</a>'
+			var deployedSite = '<a target="_blank" class="links" href="'+repos[i].homepage + '">'+repos[i].homepage+'</a>'
 		}
 
 
 // Display the users rep details by appending it inside the div publicRepos
-		$('.publicRepos').append('<p>'+index+'. '+repos[i].name + '</p>'
+		$('.publicRepos').append('<h4 class="text-uppercase">'+index+'. '+repos[i].name + '</h4>'
 		+'<p> Created on: '+creation + '</p>'
 		+'<p>Description: '+repos[i].description + '</p>'
-		+'<p>Repository Url: '+'<a target="_blank" href="'+repos[i].html_url + '">'+repos[i].html_url+'</a></p>'
+		+'<p>Repository Url: '+'<a target="_blank" class="links" href="'+repos[i].html_url + '">'+repos[i].html_url+'</a></p>'
 		+'<p>Deployed Site: '+deployedSite+'</p>'
 		)
 					
@@ -61,6 +60,7 @@ $('.userInfo').append('<h2>User\'s Information</h2>'+'<p>Username: '+name + '</p
 	})
 }).fail(function(error){
     $('.userInfo').append(error.responseJSON.message);
+    $('.publicRepos').append('<h2 class="text-center"> Username entered is not on the database.</h2>');
   });
 };
 
